@@ -16,12 +16,20 @@ bricks_group = pygame.sprite.Group()
 ball_group = pygame.sprite.Group()
 
 player = player.Player()
-bricks = bricks.Bricks()
+bricks = bricks.Bricks(x, y)
 ball = ball.Ball()
-
 player_group.add(player)
-bricks_group.add(bricks)
 ball_group.add(ball)
+rows = 5
+cols = 5
+width = 60
+height = 20
+gap = 2
+for r in range(row):
+
+    for c in range(cols):
+        bricks_group.add(bricks, (rows * width, cols * height) )
+
 
 
 
@@ -65,7 +73,7 @@ def draw():
 
 
 def update():
-    ball_group.update()
+    ball_group.update(player_group)
     player_group.update()
     bricks_group.update()
 

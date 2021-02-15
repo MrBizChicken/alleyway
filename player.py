@@ -6,7 +6,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.x = GAME_WIDTH // 2
-        self.y = 300
+        self.y = 500
         self.width = 200
         self.height = 30
         self.speed = 5
