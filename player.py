@@ -1,19 +1,19 @@
 import pygame, random
 from constants import *
 import player
-pygame.init()
+
 class Player(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self, width, height):
         super().__init__()
         self.x = GAME_WIDTH // 2
-        self.y = 500
-        self.width = 200
-        self.height = 30
+        self.y = GAME_HEIGHT
+        self.width = width
+        self.height = height
         self.speed = 5
         self.image = pygame.Surface([self.width, self.height])
         self.image.fill((255, 255 ,255))
         self.rect = self.image.get_rect()
-        self.rect.center = (self.x, self.y)
+        self.rect.bottomleft = (self.x, self.y)
 
 
 
